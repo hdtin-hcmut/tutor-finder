@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import SearchBar from "../tutors/SearchBar";
 
 export default function Hero() {
   return (
@@ -25,6 +26,10 @@ export default function Hero() {
           >
             Become Tutor
           </Button>
+        </div>
+
+        <div className="mt-8">
+          <SearchBar />
         </div>
       </div>
     </section>
