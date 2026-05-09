@@ -1,37 +1,53 @@
-import TutorCard from "@/components/TutorCard";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/layout/Hero";
+import TutorCard from "@/components/tutors/TutorCard";
 
 const tutors = [
   {
     id: 1,
     name: "Nguyen Van A",
     subject: "Math",
-    price: 150000,
+    price: 150,
   },
   {
     id: 2,
     name: "Tran Thi B",
-    subject: "English",
-    price: 200000,
+    subject: "IELTS",
+    price: 300,
+  },
+  {
+    id: 3,
+    name: "Le Van C",
+    subject: "Programming",
+    price: 500,
   },
 ];
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="p-10">
-      <h1 className="text-4xl font-bold mb-6">
-        Tutor Finder
-      </h1>
+    <>
+      <Navbar />
 
-      <div className="grid gap-4">
-        {tutors.map((tutor) => (
-          <TutorCard
-            key={tutor.id}
-            name={tutor.name}
-            subject={tutor.subject}
-            price={tutor.price}
-          />
-        ))}
-      </div>
-    </main>
+      <Hero />
+
+      <section className="pb-20">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-8">
+            Popular Tutors
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {tutors.map((tutor) => (
+              <TutorCard
+                key={tutor.id}
+                name={tutor.name}
+                subject={tutor.subject}
+                price={tutor.price}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
